@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 import "@openzeppelin/contracts/utils/structs/EnumerableSet.sol";
 
-contract RelinkdDomain is ERC721, Ownable {
+contract Lock is ERC721, Ownable {
 
     uint256 private _counter;
 
@@ -26,10 +26,7 @@ contract RelinkdDomain is ERC721, Ownable {
     mapping(uint256 => address) public tokenIdToAddress;
     
 
-    constructor(
-        address factory,
-        address owner_
-    ) ERC721("scores", "spi") {}
+    constructor() ERC721("scores", "spi") {}
 
 
     function mint(
