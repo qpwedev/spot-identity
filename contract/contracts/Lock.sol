@@ -43,7 +43,7 @@ contract Lock is ERC721, Ownable {
         address receiver,
         ScoreParametrs memory score
     ) external {
-        require(addressToScore[receiver].owner == address(0), "You already minted your score");
+        // require(addressToScore[receiver].owner == address(0), "You already minted your score");
 
         _safeMint(receiver, _counter);
         tokenIdToAddress[_counter] = receiver;
