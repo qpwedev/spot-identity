@@ -6,10 +6,10 @@ API_KEY = 'Jtqysgdo.I7yu9LfaQTklHrvuak9Q8CQUAlrHMkLs'
 
 
 @retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=1, min=2, max=10))
-def get_gitcoin_score(address, api_key):
+def get_gitcoin_score(address):
     headers = {
         'Content-Type': 'application/json',
-        'X-API-KEY': api_key,
+        'X-API-KEY': API_KEY,
         'Accept': 'application/json',
     }
     response = requests.get(
@@ -17,7 +17,7 @@ def get_gitcoin_score(address, api_key):
     result = response.json()
 
     if 'detail' in result and result['detail'] == 'Unable to get score for provided scorer.':
-        return None
+        return 0
 
     return result
 

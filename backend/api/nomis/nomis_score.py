@@ -30,10 +30,3 @@ def get_nomis_score_polygon(address):
     return result
 
     # return None
-
-
-print(
-    get_nomis_score_eth(
-        '0x34e084C326d1eaf8bc5B2CF12DC3261621D387E3'
-    )
-)
