@@ -32,6 +32,14 @@ The scores passport attestion gets minted on-chain via EAS schema.
 # Launch
 ## Front-end Launch 
 
+Front-end is stored in the ```frontend``` folder.
+To launch it run
+
+```
+npm install
+npm run start
+```
+
 ## Verifier 
 
 ## Issuer 
