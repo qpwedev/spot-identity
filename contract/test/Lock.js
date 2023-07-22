@@ -10,16 +10,24 @@ describe("Lock", function () {
   let lock, Lock, owner, otherAccount
 
   const testScore = {
-    DegenScore: 920,
-    CredScore: 700,
-    NomisPolygonScore: 57,
-    NomisEthereumScore: 80,
-    GitcoinScore: 35,
+
+    GitcoinScore: 10,
+    WalletData: 10,
+    SpotScore: 10,
+    SocialScore: 10,
+
+    // DegenScore: 920,
+    // CredScore: 700,
+    // NomisPolygonScore: 57,
+    // NomisEthereumScore: 80,
+    // GitcoinScore: 35,
+    // WalletGuilds: 0, 
+    // WalletTransactions: 0,
 
     
-    WalletNFTs: 31,
-    WalletTokens: 0,
-    WalletAge: 0,
+    // WalletNFTs: 31,
+    // WalletTokens: 0,
+    // WalletAge: 0,
     // WalletGuilds: 0,
     // WalletTransactions: 0,
     // WalletPoaps: 0, 

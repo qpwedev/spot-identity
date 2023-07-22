@@ -28,7 +28,7 @@ async function main() {
   console.log('address', contract)
 
   // await contract.mint("0xBB60ADaFB45ebbf4CE60799950a39f3dfb3AD2DCC", testScore)
-  console.log( await contract.mint("0xBB60ADaFB45ebbf4CE60799950a39f3dfb3AD2DC", testScore));
+  // console.log( await contract.mint("0xBB60ADaFB45ebbf4CE60799950a39f3dfb3AD2DC", testScore));
 }
 
 // We recommend this pattern to be able to use async/await everywhere

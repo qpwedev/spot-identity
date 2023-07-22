@@ -13,17 +13,10 @@ contract Lock is ERC721, Ownable {
     uint256 private _counter;
 
     struct ScoreParametrs {
-        uint160 DegenScore; 
-        uint160 CredScore; 
-        uint160 NomisPolygonScore;
-        uint160 NomisEthereumScore;
         uint160 GitcoinScore;
-
-        uint160 WalletNFTs; 
-        uint160 WalletTokens;
-        uint160 WalletAge; 
-        // uint160 WalletGuilds; 
-        // uint160 WalletTransactions;
+        uint160 WalletData;
+        uint160 SpotScore;
+        uint160 SocialScore;
         // uint160 WalletPoaps; 
         // uint160 WalletDomains;
 
@@ -81,19 +74,14 @@ contract Lock is ERC721, Ownable {
                                 Strings.toString(_counter),
                                 ' SPOT","image":"https://noun.pics/',
                                 Strings.toString(_counter),
-                                '.png","attributes":[{"trait_type":"Degen Score","value":"',
-                                Strings.toString(addressToScore[tokenIdToAddress[tokenId]].DegenScore),
-                                '"},{"trait_type":"Cred Score","value":"',
-                                Strings.toString(addressToScore[tokenIdToAddress[tokenId]].CredScore),
-                                '"},{"trait_type":"Nomis Polygon Score","value":"',
-                                Strings.toString(addressToScore[tokenIdToAddress[tokenId]].NomisPolygonScore),
-                                '"},{"trait_type":"Nomis Ethereum Score","value":"',
-                                Strings.toString(addressToScore[tokenIdToAddress[tokenId]].NomisEthereumScore),
-                                '"},{"trait_type":"Gitcoin Score","value":"',
+                                '.png","attributes":[{"trait_type":"Gitcoin Score","value":"',
                                 Strings.toString(addressToScore[tokenIdToAddress[tokenId]].GitcoinScore),
-                                '"},{"trait_type":"Wallet NFTs","value":"',
-                                Strings.toString(addressToScore[tokenIdToAddress[tokenId]].WalletNFTs),
-                                '"},{"trait_type":"Wallet Tokens","value":"',
+                                '"},{"trait_type":"Wallet Data","value":"',
+                                Strings.toString(addressToScore[tokenIdToAddress[tokenId]].WalletData),
+                                '"},{"trait_type":"Spot Score","value":"',
+                                Strings.toString(addressToScore[tokenIdToAddress[tokenId]].SpotScore),
+                                '"},{"trait_type":"Social Score","value":"',
+                                Strings.toString(addressToScore[tokenIdToAddress[tokenId]].SocialScore),
                                 // Strings.toString(addressToScore[tokenIdToAddress[tokenId]].WalletTokens),
                                 // '"},{"trait_type":"Wallet Age","value":"',
                                 // Strings.toString(addressToScore[tokenIdToAddress[tokenId]].WalletAge),

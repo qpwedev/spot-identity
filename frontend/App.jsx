@@ -17,7 +17,11 @@ if (state.page === "default") {
 }
 
 if (state.page === "score") {
-  return { sender };
+  return <Widget src="9f8d4bf85f6c2169fccce1deb44c95a010f6b9e682f9887d8b56546c0d5312fe/widget/ScorerPage" />;
+}
+
+if (state.page === "score") {
+  return <Widget src="9f8d4bf85f6c2169fccce1deb44c95a010f6b9e682f9887d8b56546c0d5312fe/widget/ScorerPage" />;
 }
 
 return state.page;

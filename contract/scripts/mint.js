@@ -9,6 +9,7 @@ async function main() {
     NomisPolygonScore: 57,
     NomisEthereumScore: 80,
     GitcoinScore: 35,
+    
 
     
     WalletNFTs: 31,
