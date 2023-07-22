@@ -38,6 +38,7 @@ describe("Lock", function () {
 
       console.log(await lock.tokenIdToAddress, 'testAddress')
       console.log(await lock.mint(owner, testScore), 'testScore')
+      console.log(await lock.tokenURI(0), 'tokenURI')
 
     });
 

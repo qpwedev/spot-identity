@@ -59,11 +59,11 @@ contract Lock is ERC721, Ownable {
                         Base64.encode(
                             abi.encodePacked(
                                 '{"name":"',
-                                _counter,
+                                Strings.toString(_counter),
                                 '","description":"',
-                                _counter,
-                                ' - Relinkd Domain","image":"https://noun.pics/',
-                                _counter,
+                                Strings.toString(_counter),
+                                ' SPOT","image":"https://noun.pics/',
+                                Strings.toString(_counter),
                                 '","attributes":[{"trait_type":"Degen Score","value":"',
                                 Strings.toString(addressToScore[tokenIdToAddress[tokenId]].DegenScore),
                                 '"},{"trait_type":"Cred Score","value":"',
