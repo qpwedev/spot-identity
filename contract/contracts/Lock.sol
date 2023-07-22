@@ -17,12 +17,13 @@ contract RelinkdDomain is ERC721, Ownable {
         uint160 CredScore; 
         uint160 NomisPolygonScore;
         uint160 NomisEthereumScore;
+        uint160 GitcoinScore;
 
-        uint160 numberOfToken;
+        address owner;
     }
 
-    mapping(address => ScoreParametrs) public domainToTokenId;
-    mapping(uint160 => address) public tokenIdToAddress;
+    mapping(address => ScoreParametrs) public addressToScore;
+    mapping(uint256 => address) public tokenIdToAddress;
     
 
     constructor(
@@ -32,15 +33,51 @@ contract RelinkdDomain is ERC721, Ownable {
 
 
     function mint(
-        address receiver
+        address receiver,
+        ScoreParametrs memory score
     ) external {
-      _counter++;
+        require(addressToScore[receiver].owner == address(0), "You already minted your score");
+
+        _safeMint(receiver, _counter);
+        tokenIdToAddress[_counter] = receiver;
+        addressToScore[receiver] = score;
+        _counter++;
+    }
+
+    function updateScore(
+        address user,
+        ScoreParametrs memory score
+    ) external {
+        addressToScore[user] = score;
     }
 
     function tokenURI(
         uint256 tokenId
     ) public view override returns (string memory) {
       
+            return
+                string(
+                    abi.encodePacked(
+                        "data:application/json;base64,",
+                        Base64.encode(
+                            abi.encodePacked(
+                                '{"name":"',
+                                _counter,
+                                '","description":"',
+                                _counter,
+                                ' - Relinkd Domain","image":"https://noun.pics/',
+                                _counter,
+                                '","attributes":[{"trait_type":"Degen Score","value":"',
+                                Strings.toString(addressToScore[tokenIdToAddress[tokenId]].DegenScore),
+                                '"},{"trait_type":"Cred Score","value":"',
+                                Strings.toString(addressToScore[tokenIdToAddress[tokenId]].CredScore),
+                                '"},{"trait_type":"Gitcoin Score","value":"',
+                                Strings.toString(addressToScore[tokenIdToAddress[tokenId]].GitcoinScore),
+                                '"}]}'
+                            )
+                        )
+                    )
+                );
     }
 
   
