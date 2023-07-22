@@ -22,6 +22,8 @@ All the scores are attested on PolygonID via a schema https://schema-builder-tes
 A smart contract for the NFT SBT mint allows minting an NFT with the scores as attributes and a randomly generated NounsDAO Artwork.
 The contract is deployed on Polygon, Mantle and Neon EVM. 
 
+The ```TokenURI`` function allows dynamic update of the NFT image and other metadata in base64 based on the score so each time the user updates the score passport with the new info it gets updated on the NFT. 
+
 ### EAS
 The scores passport attestion gets minted on-chain via EAS schema. 
 
@@ -40,7 +42,7 @@ npm install
 npm run start
 ```
 
-## Verifier 
+## PolygonID Verifier 
 
-## Issuer 
+## PolygonID Issuer
 
