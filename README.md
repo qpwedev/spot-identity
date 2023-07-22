@@ -9,7 +9,7 @@ SPOT is a web3 scores attestation implemented in PolygonID to allow the score-ga
 ## NEAR BOS Front-end
 Decentralized front-end is deployed on the NEAR Mainnet.
 
-## Scores calculation
+## Scores calculation Back-end
 integrated scores include Gitcoin score (Gitcoin SDK), Wallet reputation (Airstack), Social score (lens data based on the Lens handle we are fetching from Airstack).
 
 ## PolygonID 
