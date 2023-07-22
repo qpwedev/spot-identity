@@ -58,5 +58,5 @@ app.post('/issue-attestation', async (req, res) => {
     res.send({ newAttestationUID });
 });
 
-const port = process.env.EAS_PORT || 3003;
+const port = process.env.EAS_PORT || 7777;
 app.listen(port, () => console.log(`Server is listening on port ${port}`));

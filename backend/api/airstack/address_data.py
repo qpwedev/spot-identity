@@ -37,10 +37,3 @@ def fetch_address_data(address: str):
     )
 
     return query_response.data
-
-
-pprint(
-    fetch_address_data(
-        'qpwedev.eth'
-    )
-)
