@@ -2,6 +2,10 @@
 
 SPOT is a web3 scores attestation implemented in PolygonID to allow the score-gated sign in 
 
+
+![image](https://github.com/qpwedev/spot-identity/assets/119045809/2a9d0605-58b3-4a06-8fb0-6a6aef19d5bb)
+
+
 ## NEAR BOS Front-end
 Decentralized front-end is deployed on the NEAR Mainnet.
 
