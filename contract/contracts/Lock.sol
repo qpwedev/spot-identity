@@ -19,6 +19,23 @@ contract Lock is ERC721, Ownable {
         uint160 NomisEthereumScore;
         uint160 GitcoinScore;
 
+        uint160 WalletNFTs; 
+        uint160 WalletTokens;
+        uint160 WalletAge; 
+        // uint160 WalletGuilds; 
+        // uint160 WalletTransactions;
+        // uint160 WalletPoaps; 
+        // uint160 WalletDomains;
+
+        // uint160 LensFollowers;
+        // uint160 LensFollowing; 
+        // uint160 LensPosts;
+        // uint160 LensComments;
+        // uint160 FarcasterFollowers; 
+        // uint160 FarcasterFollowing;
+        // uint160 FarcasterPosts;
+        // uint160 FarcasterComments;
+
         address owner;
     }
 
@@ -64,18 +81,51 @@ contract Lock is ERC721, Ownable {
                                 Strings.toString(_counter),
                                 ' SPOT","image":"https://noun.pics/',
                                 Strings.toString(_counter),
-                                '","attributes":[{"trait_type":"Degen Score","value":"',
+                                '.png","attributes":[{"trait_type":"Degen Score","value":"',
                                 Strings.toString(addressToScore[tokenIdToAddress[tokenId]].DegenScore),
                                 '"},{"trait_type":"Cred Score","value":"',
                                 Strings.toString(addressToScore[tokenIdToAddress[tokenId]].CredScore),
+                                '"},{"trait_type":"Nomis Polygon Score","value":"',
+                                Strings.toString(addressToScore[tokenIdToAddress[tokenId]].NomisPolygonScore),
+                                '"},{"trait_type":"Nomis Ethereum Score","value":"',
+                                Strings.toString(addressToScore[tokenIdToAddress[tokenId]].NomisEthereumScore),
                                 '"},{"trait_type":"Gitcoin Score","value":"',
                                 Strings.toString(addressToScore[tokenIdToAddress[tokenId]].GitcoinScore),
+                                '"},{"trait_type":"Wallet NFTs","value":"',
+                                Strings.toString(addressToScore[tokenIdToAddress[tokenId]].WalletNFTs),
+                                '"},{"trait_type":"Wallet Tokens","value":"',
+                                // Strings.toString(addressToScore[tokenIdToAddress[tokenId]].WalletTokens),
+                                // '"},{"trait_type":"Wallet Age","value":"',
+                                // Strings.toString(addressToScore[tokenIdToAddress[tokenId]].WalletAge),
+                                // '"},{"trait_type":"Wallet Guilds","value":"',
+                                // Strings.toString(addressToScore[tokenIdToAddress[tokenId]].WalletGuilds),
+                                // '"},{"trait_type":"Wallet Transactions","value":"',
+                                // Strings.toString(addressToScore[tokenIdToAddress[tokenId]].WalletTransactions),
+                                // '"},{"trait_type":"Wallet Poaps","value":"',
+                                // Strings.toString(addressToScore[tokenIdToAddress[tokenId]].WalletPoaps),
+                                // '"},{"trait_type":"Wallet Domains","value":"',
+                                // Strings.toString(addressToScore[tokenIdToAddress[tokenId]].WalletDomains),
+                                // '"},{"trait_type":"Lens Following","value":"',
+                                // Strings.toString(addressToScore[tokenIdToAddress[tokenId]].LensFollowing),
+                                // '"},{"trait_type":"Lens Posts","value":"',
+                                // Strings.toString(addressToScore[tokenIdToAddress[tokenId]].LensPosts),
+                                // '"},{"trait_type":"Lens Comments","value":"',
+                                // Strings.toString(addressToScore[tokenIdToAddress[tokenId]].LensComments),
+                                // '"},{"trait_type":"Farcaster Followers","value":"',
+                                // Strings.toString(addressToScore[tokenIdToAddress[tokenId]].FarcasterFollowers),
+                                // '"},{"trait_type":"Farcaster Following","value":"',
+                                // Strings.toString(addressToScore[tokenIdToAddress[tokenId]].FarcasterFollowing),
+                                // '"},{"trait_type":"Farcaster Posts","value":"',
+                                // Strings.toString(addressToScore[tokenIdToAddress[tokenId]].FarcasterPosts),
+                                // '"},{"trait_type":"Farcaster Comments","value":"',
+                                // Strings.toString(addressToScore[tokenIdToAddress[tokenId]].FarcasterComments),
+                                // '"},{"trait_type":"LensFollowers","value":"',
+                                // Strings.toString(addressToScore[tokenIdToAddress[tokenId]].LensFollowers),
                                 '"}]}'
                             )
                         )
                     )
                 );
     }
-
   
 }
