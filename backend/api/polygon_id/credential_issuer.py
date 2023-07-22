@@ -46,3 +46,18 @@ def generate_credential_link(scores: Scores):
     )
 
     return "https://issuer-ui.polygonid.me/credentials/scan-link/" + response.json()['id']
+
+
+# p = generate_credential_link(
+#     Scores(
+#         0.5,
+#         0.5,
+#         0.5,
+#         0.5,
+#         0.5,
+#         0.5,
+#         0.5
+#     )
+# )
+
+# print(p)

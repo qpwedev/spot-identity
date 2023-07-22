@@ -1,0 +1,19 @@
+query MyQuery($identity: Identity = "vitalik.lens") {
+  Wallet(input: { blockchain: ethereum, identity: $identity }) {
+    addresses
+    socials {
+      dappName
+      profileName
+    }
+    poaps {
+      id
+    }
+    tokenBalances {
+      amount
+      tokenType
+    }
+    tokenTransfers {
+      amount
+    }
+  }
+}
