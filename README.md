@@ -15,8 +15,9 @@ integrated scores include Gitcoin score (Gitcoin SDK), Wallet reputation (Airsta
 ## PolygonID 
 All the scores are attested on PolygonID via a schema https://schema-builder-test.polygonid.me/schemas/26b1a2d2-2bd3-44cd-978b-693882805b47 
 
-## Smart contracts 
+## Smart contract
 A smart contract for the NFT SBT mint allows minting an NFT with the scores as attributes and a randomly generated NounsDAO Artwork.
+The contract is deployed on Polygon, Mantle and Neon EVM. 
 
 ## EAS
 The scores passport attestion gets minted on-chain via EAS schema. 
