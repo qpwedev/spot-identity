@@ -1,0 +1,14 @@
+query Profile($handle: Handle) {
+  profile(request: { handle: $handle }) {
+    handle
+    stats {
+      totalFollowers
+      totalFollowing
+      totalPosts
+      totalComments
+      totalMirrors
+      totalPublications
+      totalCollects
+    }
+  }
+}
