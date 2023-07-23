@@ -1,3 +1,9 @@
+const sender = Ethers.send("eth_requestAccounts", [])[0];
+
+const data = fetch(`https://tonft.app/get-scores?recipient=${sender}`);
+
+const dataParsed = JSON.parse(data.body);
+
 const priceFeedAddress = "0xf25521b0B380eDE1b35A6A6DBBECf07602FeE901";
 
 const priceFeedABI = [
@@ -152,23 +158,26 @@ return (
       </div>
       <div className="scoresPassport">
         <div>
-          Wallet data <span>10 / 50</span>
+          Wallet data <span>{dataParsed.scores.wallet_data.toFixed(2)}</span>
         </div>
         <div>
-          Social score <span>10 / 50</span>
+          Social score <span>{dataParsed.scores.social_score.toFixed(2)}</span>
         </div>
         <div>
-          SPOT score <span>10 / 50</span>
+          SPOT score <span>{dataParsed.scores.spot_score.toFixed(2)}</span>
         </div>
         <div>
-          Gitcoin score <span>10 / 50</span>
+          Gitcoin score{" "}
+          <span>{dataParsed.scores.gitcoin_score.toFixed(2)}</span>
         </div>
       </div>
       <div className="finalScore">
         <img src="https://ipfs.near.social/ipfs/bafkreigbqojrrt6s3izi45xes3gopt2ko7gjyiaynt4re2nvo5aa35uhi4" />
         <div>
           <span>score</span>
-          <span className="green">10 / 25</span>
+          <span className="green">
+            {dataParsed.scores.spot_score.toFixed(0)} / 777
+          </span>
         </div>
       </div>
     </CardInfo>
@@ -182,12 +191,12 @@ return (
 
         console.log(contract.tokenURI(0));
 
-        contract.mint("0xDD6BFbe9EC414FFABBcc80BB88378c0684e2Ad9c", {
-          GitcoinScore: 10,
-          WalletData: 10,
-          SpotScore: 10,
-          SocialScore: 10,
-          owner: "0xDD6BFbe9EC414FFABBcc80BB88378c0684e2Ad9c",
+        contract.mint(sender, {
+          GitcoinScore: dataParsed.scores.gitcoin_score.toFixed(2),
+          WalletData: dataParsed.scores.wallet_data.toFixed(2),
+          SpotScore: dataParsed.scores.spot_score.toFixed(2),
+          SocialScore: dataParsed.scores.gitcoin_score.toFixed(2),
+          owner: sender,
         });
       }}
     >
