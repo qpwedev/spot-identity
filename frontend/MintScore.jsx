@@ -176,7 +176,7 @@ return (
         <div>
           <span>score</span>
           <span className="green">
-            {dataParsed.scores.spot_score.toFixed(0)} / 777
+            {dataParsed.scores.spot_score.toFixed(0)} / 100
           </span>
         </div>
       </div>
