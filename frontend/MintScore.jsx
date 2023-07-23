@@ -189,8 +189,6 @@ return (
           Ethers.provider().getSigner()
         );
 
-        console.log(contract.tokenURI(0));
-
         contract.mint(sender, {
           GitcoinScore: dataParsed.scores.gitcoin_score.toFixed(2),
           WalletData: dataParsed.scores.wallet_data.toFixed(2),

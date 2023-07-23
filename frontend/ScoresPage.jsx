@@ -78,6 +78,7 @@ const ScoreInfo = styled.div`
       justify-content: center;
       flex-wrap: wrap;
       width: 60%;
+      min-width: 400px;
       
       background-color: #2C2C2C;
       border: 3px white solid;
@@ -133,6 +134,7 @@ const Scores = styled.div`
 const ScoresContainer = styled.div`
       display: flex;
       align-items: center;
+      width: 100%;
   
       button {
         background-color: #BDFF00!important;
@@ -140,7 +142,7 @@ const ScoresContainer = styled.div`
       }
   `;
 
-if (sender) {
+if (sender && dataParsed.scores) {
   return (
     <Wrapper>
       <div className="Logo">
@@ -196,16 +198,16 @@ if (sender) {
               </div>
               <div className="scoreContainer">
                 <div>
-                  Followers <span>{state.wallet.nfts}</span>
+                  Followers <span>1</span>
                 </div>
                 <div>
-                  Following <span>{state.wallet.tokens}</span>
+                  Following <span>1</span>
                 </div>
                 <div>
-                  Comments <span>{state.wallet.walletAge}</span>
+                  Comments <span>1</span>
                 </div>
                 <div>
-                  Posts <span>{state.wallet.guilds}</span>
+                  Posts <span>1</span>
                 </div>
               </div>
               <hr />
@@ -236,4 +238,6 @@ if (sender) {
     </Wrapper>
   );
 }
+
+
 
