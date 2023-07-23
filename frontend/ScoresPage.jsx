@@ -155,7 +155,7 @@ if (sender && dataParsed.scores) {
           <ScoreInfo className="box">
             <h2 className="spScores">
               SP Scores{" "}
-              <span>{dataParsed.scores.spot_score.toFixed(2)} / 777</span>
+              <span>{dataParsed.scores.spot_score.toFixed(2)} / 1000 </span>
             </h2>
             <hr />
             <div className="scoreContainer">
