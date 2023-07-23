@@ -88,12 +88,16 @@ def calculate_wallet_data_score(wallet_data):
 
 def calculate_degen_score(address):
     score = get_degen_score(address)
-    return score
+    return 1
 
 
 def calculate_nomis_score_eth(address):
     score = get_nomis_score_eth(address)
-    return score
+
+    if score:
+        return score['data']['score']
+
+    return 1
 
 
 def calculate_gitcoin_score(address):
@@ -102,7 +106,7 @@ def calculate_gitcoin_score(address):
     if score:
         return round(float(score['score']) / 100, 5)
 
-    return score
+    return 1
 
 
 def calculate_spot_score(followers, following, posts, comments, mirrors, publications, collects, gitcoin):
@@ -181,13 +185,21 @@ def get_scores(address):
 
     gitcoin_score = calculate_gitcoin_score(address)
 
+    print(
+        social_score,
+        degen_score,
+        nomis_score,
+        gitcoin_score,
+        wallet_data_score
+    )
+
     return {
         "scores": {
             "social_score": social_score,
             "degen_score": degen_score,
             "nomis_score_eth": nomis_score,
             "gitcoin_score": gitcoin_score,
-            "spot_score": 777 * (float(social_score) + float(degen_score)+float(nomis_score)+float(gitcoin_score) + float(wallet_data_score)) / 5,
+            "spot_score": 100 * (float(social_score) + float(degen_score)+float(nomis_score)+float(gitcoin_score) + float(wallet_data_score)) / 5,
             "wallet_data": wallet_data_score,
         },
 

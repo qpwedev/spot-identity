@@ -32,7 +32,7 @@ def generate_credential_link(scores: Scores):
         'expiration': None,
         'limitedClaims': 1,
         'mtProof': False,
-        'schemaID': 'c895e94a-643f-4e47-8ece-b434a520ba08',
+        'schemaID': '428a54e7-16eb-42bf-b49b-9b45818637a9',
         'signatureProof': True,
     }
 
@@ -42,18 +42,22 @@ def generate_credential_link(scores: Scores):
         json=json_data
     )
 
+    print(
+        response.text
+    )
+
     return {"url": "https://issuer-ui.polygonid.me/credentials/scan-link/" + response.json()['id'], "id": response.json()['id']}
 
 
-# p = generate_credential_link(
-#     Scores(
-#         0.5,
-#         0.5,
-#         0.5,
-#         0.5,
-#         0.5,
-#         0.5
-#     )
-# )
+p = generate_credential_link(
+    Scores(
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+    )
+)
 
-# print(p)
+print(p)

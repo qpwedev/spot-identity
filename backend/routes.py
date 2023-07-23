@@ -36,10 +36,11 @@ def attest():
 def scores():
 
     try:
-        data = request.get_json()
+        # get query param
+        recipient = request.args.get('recipient')
 
         scores = get_scores(
-            data['recipient']
+            recipient
         )
     except Exception as e:
 
