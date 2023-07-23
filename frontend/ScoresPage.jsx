@@ -171,7 +171,7 @@ if (sender && dataParsed.scores) {
                 <span>{dataParsed.scores.social_score.toFixed(2)}</span>
               </div>
               <div>
-                Nomis Ethereum{" "}
+                Nomis ETH {" "}
                 <span>{dataParsed.scores.nomis_score_eth.toFixed(2)}</span>
               </div>
             </div>
